@@ -1,0 +1,82 @@
+<!-- BEGIN: Project Grid with Hover Titles -->
+<style>
+  /* 1) Import your chosen Google Font */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+  /* 2) Grid container: 3 equal columns */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;           /* space between cells */
+    max-width: 1200px;   /* optional overall width */
+    margin: 0 auto;      /* center on page */
+  }
+
+  /* 3) Each tile is a link filling its cell */
+  .project-item {
+    position: relative;
+    overflow: hidden;
+    display: block;      /* makes the <a> fill its grid cell */
+    text-decoration: none;
+  }
+
+  /* 4) Image styling and hover zoom */
+  .project-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform .3s ease;
+  }
+  .project-item:hover img {
+    transform: scale(1.05);
+  }
+
+  /* 5) Semi‑transparent overlay, hidden by default */
+  .project-item .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity .3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .project-item:hover .overlay {
+    opacity: 1;
+  }
+
+  /* 6) Overlay text: font, size, weight */
+  .project-item .overlay span {
+    font-family: 'Montserrat', sans-serif; /* change to your font */
+    font-size: 1.2rem;      /* tweak up/down as needed */
+    font-weight: 400;       /* 400 = normal, 700 = bold */
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    text-align: center;
+  }
+</style>
+
+<div class="project-grid">
+  <!-- Project 1 -->
+  <a href="https://kristinatamaria.com/deeds-health-mural" class="project-item">
+    <!-- Replace with your Google Drive "direct view" URL -->
+    <img src="https://i.ibb.co/yJwzdxx/E1-CB875-D-1493-4-F95-BBBD-58-F918363-D0-E.jpg" alt="Project One">
+    <div class="overlay"><span>DEEDS HEALTH Mural</span></div>
+  </a>
+
+  <!-- Project 2 -->
+  <a href="/projects/project‑2.html" class="project-item">
+    <img src="https://drive.google.com/uc?export=view&id=YOUR_FILE_ID_2" alt="Project Two">
+    <div class="overlay"><span>Project Two</span></div>
+  </a>
+
+  <!-- Project 3 -->
+  <a href="/projects/project‑3.html" class="project-item">
+    <img src="https://drive.google.com/uc?export=view&id=YOUR_FILE_ID_3" alt="Project Three">
+    <div class="overlay"><span>Project Three</span></div>
+  </a>
+</div>
+<!-- END: Project Grid -->
